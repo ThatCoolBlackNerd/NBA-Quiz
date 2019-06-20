@@ -1,0 +1,150 @@
+* {
+box-sizing: border-box;
+}
+
+/* Styling for Landing Page */
+header {
+    margin-top: 180px;
+    width: 100%;
+}
+
+.nbaLogo {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.nba {
+    height: 250px;
+    width: 350px;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+.mainQuiz h2 {
+    font-size:45px;
+}
+
+.testMotto {
+    font-size: 30px;
+}
+
+main {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 100px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.criteria {
+    padding: 10px;
+}
+
+ul.landingList {
+    font-size: 30px;
+}
+
+footer {
+    background: #006bb7;
+    width: 100%;
+    height: 150px;
+    position: fixed;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    font-size: 40px;
+    color: white;
+}
+
+.left {
+    float:left;
+    width:100px;
+    height: 20px;
+}
+
+.center {
+    display: inline-block;
+    margin:0 auto;
+    width:100px;
+    height: 20px;
+}
+
+.right {
+    float:right;
+    width:100px;
+    height: 20px;
+}
+
+
+.actionButton {
+    font-size: 30px;
+    color: white;
+    background: grey;
+    border: 4px solid lightgray;
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    margin-top: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.submitButton {
+    font-size: 30px;
+    color: white;
+    background: darkgray;
+    border: 4px solid lightgray;
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    margin-top: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.actionButton:hover {
+    background-color: orangered;
+    color: black;
+}
+
+.submitButton:hover {
+    background-color: orangered;
+    color: black;
+    border: 4px dashed black;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 4px solid gray;
+    border-radius: 25px;
+    font-size: 30px;
+    transition-duration: 0.5s;
+    color: #343341;
+}
+
+label:hover {
+    background-color: #50c994;
+    color: white;
+}
+
+input[type="radio"] {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+input[type=radio] + label {
+    background-color: #50c994;
+    color: white;
+}

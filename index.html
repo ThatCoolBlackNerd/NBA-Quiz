@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NBA Quizz App</title>
+    <meta name="description" content="How much do you know about current and past NBA trivia?">
+    <link href="main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="Logo" class="topLogo">
+      <div class="nbaLogo">
+        <img src="nba_logo.png" alt="NBA Logo" class="nba">
+      </div>
+    </header>
+    <main role="main" id="js-quiz-location" class="quizLocation">
+      <div class="quizInfo">
+        <h1>How Big of a Basketball Fan are you?</h1>
+        <h2 class="testMotto">Test your knowledge of the NBA Past & Present</h2>
+        <section>
+          <ul class="landingList">
+            <li class="critera">There will be 10 Question</li>
+            <li class="criteria">Each Question is worth 2 Points</li>
+            <li class="criteria">Find out if you are drafting in the Top 5 or an NBA Champion</li>
+          </ul>
+        </section>
+      </div>
+      <div class="mainQuiz"></div>
+    </main>
+    <footer role="Page Info" id="js-page-info" class="pageInfo">
+        <div class="left">Question:<span class="questionNumber">/10</span></div>
+        <div class="center"><button type="button" class="actionButton">Shoot Your Shot!</button></div>
+        <div class="right">Score: <span class="totalScore">0</span></div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
