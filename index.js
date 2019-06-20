@@ -108,7 +108,7 @@ let score = 0;
 function renderQuiz () {
     return `
     <h2>${triviaQuestion[questionNumber].question}</h2>  
-        <form>
+        <form id="js-question-form">
             <fieldset>
                 <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[0]}"><span>${triviaQuestion[questionNumber].choices[0]}</span>
                 </label>
@@ -124,21 +124,26 @@ function renderQuiz () {
     `
 }
 
+function changeScore (){
+    $('.totalScore').text(score);
+}
+
 function submitAnswer () {
-$('form').on('submit', function (event) {
+$('.mainQuiz').on('click', 'form button', event => {
     event.preventDefault();
 
     let checkedAnswer = $('input:checked');
-    let correctAnswer = triviaQuestion[0].rightAnswer;
-    let answerSelected = checkedAnswer.val()
+    let correctAnswer = triviaQuestion[questionNumber].rightAnswer;
+    let answerSelected = checkedAnswer.val();
 
-        if (answerSelected === correctAnswer) {
-            $('.mainQuiz').html(youGotItRight);
+     if (answerSelected === correctAnswer) {
+        $('.mainQuiz').html(youGotItRight);
+      let score = score + 2;
         }
-        else {
-            $('.mainQuiz)').html(youGotItWrong);
+    else {
+        $('.mainQuiz)').html(youGotItWrong);
         }
-    });
+});    
 }
 
 function startQuiz () {
@@ -151,13 +156,24 @@ function startQuiz () {
 }
 
 function youGotItRight () {
+    return `<div class="positiveFeedback"><img src="circlecheck.png" class="checkMark" alt="Correct Answer">
+                <div class="innerFeedback"><span class="correct">Correct!! 2 Points!!</span>
+                    <button type="button" class="nextButton">Next Question</button>
+                </div>
+            </div>
+    `
+}
+
+function youGotItWrong () {
     return `<p>Your Got It Right</p>`
 }
 
 
-
 function runAtStart () {
     startQuiz();
+    renderQuiz();
+    submitAnswer();
+    changeScore();
 }
 
 $(runAtStart);
