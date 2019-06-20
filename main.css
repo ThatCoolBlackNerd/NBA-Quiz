@@ -66,16 +66,13 @@ footer {
 }
 
 .center {
-    display: inline-block;
-    margin:0 auto;
-    width:100px;
-    height: 20px;
 }
 
 .right {
     float:right;
     width:100px;
     height: 20px;
+    margin-right: 20px;
 }
 
 
@@ -83,10 +80,10 @@ footer {
     font-size: 30px;
     color: white;
     background: grey;
-    border: 4px solid lightgray;
-    border-radius: 10px;
-    width: 300px;
-    height: 100px;
+    border: 4px solid #006bb7;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
     margin-top: 15px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition-duration: 0.5s;
@@ -97,19 +94,33 @@ footer {
     font-size: 30px;
     color: white;
     background: darkgray;
-    border: 4px solid lightgray;
-    border-radius: 10px;
-    width: 300px;
-    height: 100px;
+    border: 4px solid #006bb7;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
     margin-top: 15px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition-duration: 0.5s;
     cursor: pointer;
 }
 
+.nextButton {
+    font-size: 30px;
+    color: white;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.nextButton:hover {
+    background-color: orangered;
+    color: black;
+    border: 4px dashed black;
+}
+
 .actionButton:hover {
     background-color: orangered;
     color: black;
+    border: 4px dashed black;
 }
 
 .submitButton:hover {
@@ -147,4 +158,31 @@ input[type="radio"] {
 input[type=radio] + label {
     background-color: #50c994;
     color: white;
+}
+
+.checkMark {
+    width:300px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.positiveFeedback {
+    border: 3px solid grey;
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.correct {
+    font-size: 30px;
+}
+
+.innerFeedback {
+    border: 2px solid lightgray;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
 }
