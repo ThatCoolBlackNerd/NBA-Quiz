@@ -4,7 +4,7 @@ box-sizing: border-box;
 
 /* Styling for Landing Page */
 header {
-    margin-top: 180px;
+    margin-top: 30px;
     width: 100%;
 }
 
@@ -34,9 +34,12 @@ h1 {
 main {
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 100px;
+    margin-top: 10px;
+    min-height: 100vh;
+    margin-bottom: 100px;
     border-radius: 3px;
     text-align: center;
+    position: relative;
 }
 
 .criteria {
@@ -45,12 +48,13 @@ main {
 
 ul.landingList {
     font-size: 30px;
+    text-align: left;
 }
 
 footer {
     background: #006bb7;
     width: 100%;
-    height: 150px;
+    height: 100px;
     position: fixed;
     text-align: center;
     left: 0;
@@ -107,6 +111,13 @@ footer {
 .nextButton {
     font-size: 30px;
     color: white;
+    background: darkgray;
+    border: 4px solid 50c994;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition-duration: 0.5s;
     cursor: pointer;
 }
@@ -166,23 +177,62 @@ input[type=radio] + label {
     margin-top: 10px;
 }
 
+.xMark {
+    width:300px;
+    height: 300px;
+    margin-top: 10px;
+}
+
 .positiveFeedback {
-    border: 3px solid grey;
-    width: 500px;
+    border: 3px solid lightgray;
+    background: lightgray;
+    width: 700px;
     height: 500px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.negativeFeedback {
+    border: 3px solid lightgray;
+    background: lightgray;
+    width: 700px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .correct {
-    font-size: 30px;
+    color: white;
+}
+
+.incorrect {
+    color: white;
 }
 
 .innerFeedback {
-    border: 2px solid lightgray;
+    border-top: 2px solid #50c994;
+    background: #50c994;
     position: absolute;
+    padding: 10px;
+    font-size: 45px;
+    height: 100px;
+    left:0;
     bottom: 0;
     width: 100%;
+}
 
+.innerFeedback2 {
+    border-top: 2px solid #c93547;
+    background: #c93547;
+    position: absolute;
+    padding: 10px;
+    font-size: 45px;
+    height: 120px;
+    left:0;
+    bottom: 0;
+    width: 100%;
 }
