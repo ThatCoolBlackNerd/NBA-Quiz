@@ -1,0 +1,100 @@
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 767px) {
+      main {
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-top: 0px;
+          font-size: 25px;
+          margin-bottom:100px;
+          min-height: 65vh;
+      }
+
+      footer {
+          height: 75px;
+          font-size: 25px;
+      }
+
+      ul.landingList {
+          font-size: 20px;
+      }
+
+      h1 {
+          font-size: 35px;
+          line-height: 35px;
+      }
+
+      .testMotto {
+          font-size: 25;
+      }
+
+      .actionButton {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        font-size: 22px;
+      }
+
+      .submitButton {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        font-size: 22px;
+      }
+
+      .resetButton {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        font-size: 22px;
+      }
+
+      .nextButton {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        font-size: 22px;
+      }
+
+      .right {
+          margin-right: 7px;
+      }
+
+      .nba {
+          height: 200px;
+          width: 300px;
+      }
+
+      .mainQuiz h2 {
+          font-size: 35px;
+      }
+
+      .feedback_results {
+          width: 550px;
+          height: 400px;
+          margin-bottom: 20px;
+      }
+
+      .innerFeedback {
+        height: 75px;
+        font-size: 40px;
+        padding: 5px;
+      }
+
+      .innerFeedback2 {
+        height: 75px;
+        font-size: 30px;
+        padding: 5px;
+      }
+
+      .innerResults {
+        height: 75px;
+        font-size: 30px;
+        padding: 5px;
+      }
+
+      .nflLogo {
+        width:250px;
+        height: 300px;
+    }
+  }
