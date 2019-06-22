@@ -6,29 +6,30 @@
     <title>NBA Quizz App</title>
     <meta name="description" content="How much do you know about current and past NBA trivia?">
     <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media='screen and (min-width: 320px) and (max-width: 767px)' href="phone.css"/>
+    <link rel="stylesheet" media='screen and (min-width: 768px) and (max-width: 1112px)' href="tablet.css"/>
   </head>
   <body>
     <header role="Logo" class="topLogo">
-      <div class="nbaLogo">
         <img src="nba_logo.png" alt="NBA Logo" class="nba">
-      </div>
     </header>
     <main role="main" id="js-quiz-location" class="quizLocation">
       <div class="quizInfo">
         <h1>How Big of a Basketball Fan are you?</h1>
         <h2 class="testMotto">Test your knowledge of the NBA Past & Present</h2>
-        <section>
+        <section role="Test Rules">
           <ul class="landingList">
             <li class="criteria">There will be 10 Question</li>
             <li class="criteria">Each Question is worth 2 Points</li>
-            <li class="criteria">Find out if you are drafting in the Top 5 or an NBA Champion</li>
+            <li class="criteria">Find out if you are and NBA Champion or not a Basketball Fan</li>
           </ul>
         </section>
-        <div class="center"><button type="button" class="actionButton">Shoot <br>Your Shot!</button></div>
+        <button type="button" class="actionButton">Shoot <br>Your Shot!</button>
       </div>
       <div class="mainQuiz"></div>
     </main>
-    <footer role="Page Info" id="js-page-info" class="pageInfo">
+    <footer role="Score and Question Count" id="js-page-info" class="pageInfo">
         <div class="left">Question:<span class="questionNumber">0</span>/10</div>
         <div class="right">Score: <span class="totalScore">0</span></div>
     </footer>
