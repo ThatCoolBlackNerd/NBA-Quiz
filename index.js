@@ -1,3 +1,5 @@
+
+// Array that stores the Quiz question and answers 
 const triviaQuestion = [
     {
         question: 'Who is the all-time leading scorer in NBA history?',
@@ -109,42 +111,21 @@ let questionCount = 1;
 function renderQuiz () {
     return `
     <h2>${triviaQuestion[questionNumber].question}</h2>  
-        <form id="js-question-form">
+        <form id="js-question-form" name="triviaForm">
             <fieldset>
-                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[0]}" required><span>${triviaQuestion[questionNumber].choices[0]}</span>
+                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[0]}" required /><span>${triviaQuestion[questionNumber].choices[0]}</span>
                 </label>
-                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[1]}"><span>${triviaQuestion[questionNumber].choices[1]}</span>
+                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[1]}" required /><span>${triviaQuestion[questionNumber].choices[1]}</span>
                 </label>
-                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[2]}"><span>${triviaQuestion[questionNumber].choices[2]}</span>
+                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[2]}" required /><span>${triviaQuestion[questionNumber].choices[2]}</span>
                 </label>
-                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[3]}"><span>${triviaQuestion[questionNumber].choices[3]}</span>
+                <label class="answerChoices"><input type="radio" name="answer" value="${triviaQuestion[questionNumber].choices[3]}" required /><span>${triviaQuestion[questionNumber].choices[3]}</span>
                 </label>
                 <button type="submit" class="submitButton">Submit</button>
             </fieldset>
         </form>
     `
 }
-
-
-function submitAnswer () {
-$('.mainQuiz').on('click', 'form button', event => {
-    event.preventDefault();
-
-    let checkedAnswer = $('input:checked');
-    let correctAnswer = triviaQuestion[questionNumber].rightAnswer;
-    let answerSelected = checkedAnswer.val();
-    let newScore  = scoreCount += 2;
-
-     if (answerSelected === correctAnswer) {
-        $('.mainQuiz').html(youGotItRight);
-        $('.totalScore').text(newScore);
-        }
-    else {
-        $('.mainQuiz').html(youGotItWrong);
-        }
-});    
-}
-
 
 function startQuiz () {
     $('button').on('click', function () {
@@ -155,9 +136,26 @@ function startQuiz () {
     });
 }
 
+function submitAnswer () {
+$('main').submit(event => {
+    let checkedAnswer = $('input:checked');
+    let correctAnswer = triviaQuestion[questionNumber].rightAnswer;
+    let answerSelected = checkedAnswer.val();
+
+     if (answerSelected === correctAnswer) {
+        $('.mainQuiz').html(youGotItRight);
+        $('.totalScore').text(updateScoreCount);
+        }
+    else {
+        $('.mainQuiz').html(youGotItWrong);
+        }
+    event.preventDefault();
+});    
+}
+
 function youGotItRight () {
-    return `<div class="positiveFeedback"><img src="circlecheck.png" class="checkMark" alt="Correct Answer">
-                <div class="innerFeedback"><span class="correct">Correct: You Scored 2 Points!</span>
+    return `<div class="feedback_results"><img src="circlecheck.png" class="checkMark" alt="Correct Answer">
+                <div class="innerFeedback"><span class="feedback_results_text">Correct: You Scored 2 Points!</span>
                 </div>
             </div>
             <button type="button" class="nextButton">Next Question</button>
@@ -165,8 +163,8 @@ function youGotItRight () {
 }
 
 function youGotItWrong () {
-    return `<div class="negativeFeedback"><img src="cross-512.png" class="xMark" alt="Wrong Answer">
-                <div class="innerFeedback2"><span class="incorrect">Incorrect: The Correct Answer is ${triviaQuestion[questionNumber].rightAnswer}</span></div>
+    return `<div class="feedback_results"><img src="cross-512.png" class="xMark" alt="Wrong Answer">
+                <div class="innerFeedback2"><span class="feedback_results_text">Incorrect: The Correct Answer is ${triviaQuestion[questionNumber].rightAnswer}</span></div>
             </div>
             <button type="button" class="nextButton">Next Question</button>
     `
@@ -179,7 +177,7 @@ function nextQuestion () {
         $('.mainQuiz').html(renderQuiz);
         $('.questionNumber').text(updateQuestionCount);
         } else {
-            showResults();
+            $('.mainQuiz').html(showResults);
         }
     });
 }
@@ -189,8 +187,43 @@ function updateQuestionCount () {
     return questionCount;
 }
 
+function updateScoreCount () {
+    scoreCount +=2;
+    return scoreCount;
+}
+
 function showResults () {
-   alert('You Finished');
+   if (scoreCount >= 18) {
+       return `<div class="feedback_results"><img src="NBA_Trophy.png" class="nbaTrophy" alt="You are a Champion">
+                    <div class="innerResults"><span class="feedback_results_text"> With a score of ${scoreCount} Points: You are an NBA Chamption</span></div>
+               </div>
+               <button type="button" class="resetButton">Take Another Shot</button>
+       `
+   } else if (scoreCount >= 14 && scoreCount < 18) {
+        return `<div class="feedback_results"><img src="nbaplayoffs.png" class="nbaPlayoffs" alt="You made the Playoffs">
+                    <div class="innerResults"><span class="feedback_results_text"> With a score of ${scoreCount} Points: You made the NBA Playoffs</span></div>
+                </div>
+                <button type="button" class="resetButton">Take Another Shot</button>
+        `
+   } else if (scoreCount >=8 && scoreCount < 12) {
+        return `<div class="feedback_results"><img src="draftlottery.gif" class="draftLottery" alt="You are picking in the Lottery">
+                    <div class="innerResults"><span class="feedback_results_text"> With a score of ${scoreCount} Points: You are unfortunately picking in the Lottery </span></div>
+                </div>
+                <button type="button" class="resetButton">Take Another Shot</button>
+        `
+   } else {
+        return `<div class="feedback_results"><img src="nfllogo.png" class="nflLogo" alt="Maybe Football is your Sport">
+                    <div class="innerResults"><span class="feedback_results_text"> With a score of ${scoreCount} Points: Maybe Football is your Sport </span></div>
+                </div>
+                <button type="button" class="resetButton">Take Another Shot</button>
+        `
+   }
+}
+
+function restartQuiz () {
+    $('main').on('click','.resetButton', event => {
+        document.location.reload();
+    });
 }
 
 function runAtStart () {
@@ -199,6 +232,7 @@ function runAtStart () {
     submitAnswer();
     nextQuestion();
     showResults();
+    restartQuiz();
 }
 
 $(runAtStart);
