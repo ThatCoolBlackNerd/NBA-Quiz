@@ -4,38 +4,33 @@ box-sizing: border-box;
 
 /* Styling for Landing Page */
 header {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
-}
-
-.nbaLogo {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
 .nba {
-    height: 250px;
-    width: 350px;
+    height: 225px;
+    width: 325px;
 }
 
 h1 {
-    font-size: 45px;
-}
-
-.mainQuiz h2 {
-    font-size:45px;
+    font-size: 35px;
+    font-family: 'B612 Mono', monospace;
 }
 
 .testMotto {
-    font-size: 30px;
+    font-size: 25px;
+    font-family: 'B612 Mono', monospace;
 }
 
 main {
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 10px;
-    min-height: 100vh;
+    min-height: 70vh;
     margin-bottom: 100px;
     border-radius: 3px;
     text-align: center;
@@ -47,8 +42,9 @@ main {
 }
 
 ul.landingList {
-    font-size: 30px;
+    font-size: 26px;
     text-align: left;
+    font-family: 'B612 Mono', monospace;
 }
 
 footer {
@@ -59,67 +55,84 @@ footer {
     text-align: center;
     left: 0;
     bottom: 0;
-    font-size: 40px;
+    font-size: 35px;
     color: white;
+    font-family: 'B612 Mono', monospace;
 }
 
 .left {
     float:left;
     width:100px;
     height: 20px;
-}
-
-.center {
+    margin-left: 10px;
 }
 
 .right {
     float:right;
     width:100px;
     height: 20px;
-    margin-right: 20px;
+    margin-right: 55px;
 }
 
-
+/* Button Styling */
 .actionButton {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     background: grey;
     border: 4px solid #006bb7;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin-top: 15px;
+    width: 175px;
+    height: 175px;
+    margin-top: 10px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition-duration: 0.5s;
     cursor: pointer;
+    font-family: 'B612 Mono', monospace;
 }
 
 .submitButton {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     background: darkgray;
     border: 4px solid #006bb7;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin-top: 15px;
+    width: 175px;
+    height: 175px;
+    margin-top: 10px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition-duration: 0.5s;
     cursor: pointer;
+    font-family: 'B612 Mono', monospace;
 }
 
 .nextButton {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     background: darkgray;
     border: 4px solid 50c994;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     margin-top: 15px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition-duration: 0.5s;
     cursor: pointer;
+    font-family: 'B612 Mono', monospace;
+}
+
+.resetButton {
+    font-size: 25px;
+    color: white;
+    background: darkgray;
+    border: 4px solid 50c994;
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    margin-top: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.5s;
+    cursor: pointer;
+    font-family: 'B612 Mono', monospace;
 }
 
 .nextButton:hover {
@@ -140,6 +153,17 @@ footer {
     border: 4px dashed black;
 }
 
+.resetButton:hover {
+    background-color: orangered;
+    color: black;
+    border: 4px dashed black;
+}
+
+/* Quiz Styling */
+.mainQuiz h2 {
+    font-size: 35px;
+}
+
 fieldset {
     border: none;
 }
@@ -151,9 +175,10 @@ label {
     cursor: pointer;
     border: 4px solid gray;
     border-radius: 25px;
-    font-size: 30px;
+    font-size: 25px;
     transition-duration: 0.5s;
     color: #343341;
+    font-family: 'B612 Mono', monospace;
 }
 
 label:hover {
@@ -164,6 +189,8 @@ label:hover {
 input[type="radio"] {
     display: flex;
     margin-bottom: 5px;
+    height: 15px;
+    width: 15px;
 }
 
 input[type=radio] + label {
@@ -171,45 +198,19 @@ input[type=radio] + label {
     color: white;
 }
 
-.checkMark {
-    width:300px;
-    height: 300px;
-    margin-top: 10px;
-}
-
-.xMark {
-    width:300px;
-    height: 300px;
-    margin-top: 10px;
-}
-
-.positiveFeedback {
+.feedback_results {
     border: 3px solid lightgray;
     background: lightgray;
-    width: 700px;
-    height: 500px;
+    border-radius:10px;
+    width: 675px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.negativeFeedback {
-    border: 3px solid lightgray;
-    background: lightgray;
-    width: 700px;
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.correct {
-    color: white;
-}
-
-.incorrect {
+.feedback_results_text {
     color: white;
 }
 
@@ -217,9 +218,10 @@ input[type=radio] + label {
     border-top: 2px solid #50c994;
     background: #50c994;
     position: absolute;
-    padding: 10px;
-    font-size: 45px;
-    height: 100px;
+    padding: 7px;
+    font-size: 35px;
+    height: 90px;
+    margin: 0px;
     left:0;
     bottom: 0;
     width: 100%;
@@ -229,10 +231,59 @@ input[type=radio] + label {
     border-top: 2px solid #c93547;
     background: #c93547;
     position: absolute;
+    padding: 7px;
+    font-size: 35px;
+    height: 100px;
+    left:0;
+    bottom: 0;
+    width: 100%;
+}
+
+.innerResults {
+    border-top: 2px solid #006bb7;
+    background: #006bb7;
+    position: absolute;
     padding: 10px;
-    font-size: 45px;
+    font-size: 35px;
     height: 120px;
     left:0;
     bottom: 0;
     width: 100%;
+}
+
+/* Image Styling */
+.checkMark {
+    width:3 00px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.xMark {
+    width: 280px;
+    height: 280px;
+    margin-top: 10px;
+}
+
+.nbaTrophy {
+    width:300px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.nbaPlayoffs {
+    width:400px;
+    height: 400px;
+    margin-top: 0px;
+}
+
+.draftLottery {
+    width:450px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.nflLogo {
+    width:280px;
+    height: 350px;
+    margin-top: 10px;
 }
